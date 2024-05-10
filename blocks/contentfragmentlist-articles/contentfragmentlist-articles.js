@@ -59,8 +59,8 @@ async function getCategories(persistedQuery, isUE) {
  
 
     return items.map((item) => {
-        /*const imageUrl = getImageUrl(item.image, isUE);*/
-        const imageUrl = getImageUrl(item.featuredImage, isUE);
+        const imageUrl = getImageUrl(item.image, isUE);
+        /*const imageUrl = getImageUrl(item.featuredImage, isUE);*/
         return {
             _path: item._path,
             title: item.title,
@@ -74,14 +74,14 @@ async function getCategories(persistedQuery, isUE) {
             */
             image: {
                 url: imageUrl,
-                /*deliveryUrl: getImageUrl(item.image, false),*/
-                /*width: item.image["width"],*/
-                /*height: item.image["height"],*/
-                /*mimeType: item.image["mimeType"],*/
-                deliveryUrl: getImageUrl(item.featuredImage, false),
-                width: item.featuredImage["width"],
-                height: item.featuredImage["height"],
-                mimeType: item.featuredImage["mimeType"],
+                /*deliveryUrl: getImageUrl(item.featuredImage, false),*/
+                /*width: item.featuredImage["width"],*/
+                /*height: item.featuredImage["height"],*/
+                /*mimeType: item.featuredImage["mimeType"],*/
+                deliveryUrl: getImageUrl(item.image, false),
+                width: item.image["width"],
+                height: item.image["height"],
+                mimeType: item.image["mimeType"],
             }
         };
     });
